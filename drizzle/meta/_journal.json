@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1782047017177,
+      "tag": "0000_curly_prowler",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1782047290837,
+      "tag": "0001_stormy_wraith",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1782048731104,
+      "tag": "0002_flaky_white_queen",
+      "breakpoints": true
+    }
+  ]
+}
