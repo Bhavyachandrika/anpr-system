@@ -187,9 +187,14 @@ export async function detectPlateFromImage(
     });
 
     // Extract detection ID from result
-    let detectionId = Math.floor(Math.random() * 1000000);
-    if (detectionRecord && typeof detectionRecord === 'object' && 'insertId' in detectionRecord) {
-      detectionId = (detectionRecord as any).insertId;
+  let detectionId = 1;
+    if (detectionRecord && typeof detectionRecord === 'object') {
+      const record = detectionRecord as any;
+      if (record[0]?.insertId) {
+        detectionId = record[0].insertId;
+      } else if (record.insertId) {
+        detectionId = record.insertId;
+      }
     }
 
     // Send owner notification

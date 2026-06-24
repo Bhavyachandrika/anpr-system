@@ -9,7 +9,7 @@ import { toast } from "sonner";
 import { extractVideoFrames } from "@/lib/videoFrameExtractor";
 
 export default function VideoUploadPage() {
-  //const { isAuthenticated, loading: authLoading } = useAuth();
+  const { isAuthenticated, loading: authLoading } = useAuth();
   const [, setLocation] = useLocation();
   const [videoFile, setVideoFile] = useState<File | null>(null);
   const [videoPreview, setVideoPreview] = useState<string>("");
@@ -19,8 +19,8 @@ export default function VideoUploadPage() {
   const detectMutation = trpc.videos.detect.useMutation();
 
   // Redirect if not authenticated
- // if (!authLoading && !isAuthenticated) {
-   // setLocation("/");
+  //if (!authLoading && !isAuthenticated) {
+    //setLocation("/");
     //return null;
   //}
 

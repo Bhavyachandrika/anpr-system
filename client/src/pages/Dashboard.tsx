@@ -29,14 +29,14 @@ export default function DashboardPage() {
   const itemsPerPage = 10;
 
   // Redirect if not authenticated
-  if (!authLoading && !isAuthenticated) {
-    setLocation("/");
-    return null;
-  }
+  //if (!authLoading && !isAuthenticated) {
+    //setLocation("/");
+    //return null;
+  //}
 
   const { data: detections, isLoading, error } = trpc.detections.list.useQuery(
     { limit: 100, offset: 0 },
-    { enabled: isAuthenticated }
+    { enabled: true }
   );
 
   // Filter and sort detections

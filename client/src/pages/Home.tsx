@@ -10,13 +10,12 @@ export default function Home() {
   const [, setLocation] = useLocation();
 
   const handleGetStarted = () => {
-  setLocation("/upload");
-};
+    setLocation("/upload");
+  };
 
-const handleVideoUpload = () => {
-  setLocation("/video-upload");
-};
-
+  const handleVideoUpload = () => {
+    setLocation("/video-upload");
+  };
   const features = [
     {
       icon: Upload,

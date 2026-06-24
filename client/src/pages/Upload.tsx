@@ -8,7 +8,7 @@ import { Upload, X, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
 
 export default function UploadPage() {
-  //const { isAuthenticated, loading: authLoading } = useAuth();
+  const { isAuthenticated, loading: authLoading } = useAuth();
   const [, setLocation] = useLocation();
   const [isDragging, setIsDragging] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);

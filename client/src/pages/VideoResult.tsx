@@ -22,21 +22,21 @@ export default function VideoResultPage() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   // Redirect if not authenticated
-  if (!authLoading && !isAuthenticated) {
-    setLocation("/");
-    return null;
-  }
+  //if (!authLoading && !isAuthenticated) {
+    //setLocation("/");
+    //return null;
+  //}
 
   const videoId = params?.id ? parseInt(params.id) : null;
   const { data: video, isLoading, error } = trpc.videos.getById.useQuery(
     { id: videoId! },
-    { enabled: !!videoId && isAuthenticated }
+    { enabled: !!videoId }
   );
 
   // Fetch frame detections separately
   const { data: frameDetections = [] } = trpc.videos.getFrames.useQuery(
     { videoDetectionId: videoId! },
-    { enabled: !!videoId && isAuthenticated }
+    { enabled: !!videoId }
   );
 
   if (!videoId) {

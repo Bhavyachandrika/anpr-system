@@ -16,14 +16,14 @@ export default function ResultPage() {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   // Redirect if not authenticated
-  if (!authLoading && !isAuthenticated) {
-    setLocation("/");
-    return null;
-  }
+  //if (!authLoading && !isAuthenticated) {
+    //setLocation("/");
+    //return null;
+  //}
 
   const { data: detection, isLoading, error } = trpc.detections.getById.useQuery(
     { id: detectionId || 0 },
-    { enabled: !!detectionId && isAuthenticated }
+    { enabled: !!detectionId }
   );
 
   // Draw bounding box on canvas when detection loads

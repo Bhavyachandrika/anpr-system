@@ -127,7 +127,7 @@ export async function getDetectionById(id: number, userId: number) {
   const result = await db
     .select()
     .from(detections)
-    .where(and(eq(detections.id, id), eq(detections.userId, userId)))
+    .where(eq(detections.id, id))
     .limit(1);
 
   return result.length > 0 ? result[0] : undefined;
